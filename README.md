@@ -30,7 +30,7 @@ You think → Lumen captures → AI indexes → Q&A deepens → Draft crystalliz
 ### Install
 
 ```bash
-git clone https://github.com/anthropic-smartchoice/lumen-skills.git ~/.claude/skills/lumen
+git clone https://github.com/howardpen9/lumen.git ~/.claude/skills/lumen
 cd ~/.claude/skills/lumen && ./bin/setup
 ```
 
@@ -122,33 +122,19 @@ Turns your thoughts + Q&A insights into a coherent draft — in **your voice**, 
 
 ## The Flow
 
-```
-        ┌──────────────────────────────────────────────┐
-        │                                              │
-        ▼                                              │
-    CAPTURE ──→ INDEX ──→ THINK ──→ DRAFT ──→ EXPORT   │
-    (input)    (organize)  (deepen)  (write)   (ship)   │
-        │                    │                          │
-        │                    └── new insights ──────────┘
-        │                         captured back
-        └── anytime, anywhere
-```
+![The Flow](assets/flow.png)
 
 Skills can be used independently or in sequence. Each skill reads from and writes to `~/.lumen/`.
 
 ## Exploration Lifecycle
 
-Your thoughts naturally progress through stages:
+Your thoughts naturally progress through stages — AI determines status automatically:
 
-| Status | What it means | Next step |
-|--------|--------------|-----------|
-| **Seed** | 1-2 captures on a topic | Capture more `/lumen-capture` |
-| **Exploring** | 3-5 captures, pattern forming | Keep capturing or `/lumen-think` |
-| **Crystallizing** | 5+ captures, thesis emerging | `/lumen-think` to sharpen |
-| **Ready** | Clear thesis + evidence | `/lumen-draft` |
-| **Published** | Draft exported | `/lumen-review` to reflect |
+![Exploration Lifecycle](assets/lifecycle.png)
 
-AI determines status automatically. You never manually manage this.
+## All 8 Skills at a Glance
+
+![Skills Map](assets/skills.png)
 
 ---
 
