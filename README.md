@@ -5,6 +5,8 @@
 Claude Code skills that turn your CLI into a thinking + writing tool.
 Like [gstack](https://github.com/garrytan/gstack) is for coding, **Lumen is for thinking.**
 
+![The Flow](assets/flow.png)
+
 ---
 
 ## The Problem
@@ -17,22 +19,57 @@ You consume YouTube videos, read articles, have conversations — but those frag
 
 Lumen captures your knowledge fragments, indexes them automatically, and uses Socratic Q&A to help you **think clearly** — so writing emerges naturally from accumulated insight.
 
-```
-You think → Lumen captures → AI indexes → Q&A deepens → Draft crystallizes → Export anywhere
-```
-
 **You never organize.** You only judge what matters. AI does everything else.
 
 ---
 
-## Quick Start
+## Install
 
-### Install
+### Prerequisites
+
+- [Claude Code](https://claude.ai/code) with an active subscription (Pro or Max)
+- macOS or Linux (Windows via WSL)
+- Git
+
+### Step 1: Clone
 
 ```bash
 git clone https://github.com/howardpen9/lumen.git ~/.claude/skills/lumen
+```
+
+### Step 2: Setup
+
+```bash
 cd ~/.claude/skills/lumen && ./bin/setup
 ```
+
+You should see:
+```
+  ✦ Lumen — Setting up skills
+
+  ✓ Skills linked: ~/.claude/skills/lumen
+  ✓ Data directory: ~/.lumen
+  ✓ 8 skills installed
+
+  Ready! Try these in Claude Code:
+    /lumen-capture "your first thought"
+    /lumen-index
+    /lumen-think
+```
+
+### Step 3: Try It
+
+Open Claude Code in any directory and run:
+
+```
+/lumen-capture "your first thought goes here"
+```
+
+That's it. You're capturing.
+
+---
+
+## Quick Start
 
 ### Your First Capture
 
@@ -120,12 +157,6 @@ Turns your thoughts + Q&A insights into a coherent draft — in **your voice**, 
 | `/lumen-export` | Format for X thread / LinkedIn / blog | Ready to publish to a specific platform |
 | `/lumen-review` | Weekly learning review — see yourself think | End of week — reflect on what you learned |
 
-## The Flow
-
-![The Flow](assets/flow.png)
-
-Skills can be used independently or in sequence. Each skill reads from and writes to `~/.lumen/`.
-
 ## Exploration Lifecycle
 
 Your thoughts naturally progress through stages — AI determines status automatically:
@@ -135,6 +166,8 @@ Your thoughts naturally progress through stages — AI determines status automat
 ## All 8 Skills at a Glance
 
 ![Skills Map](assets/skills.png)
+
+Skills can be used independently or in sequence. Each skill reads from and writes to `~/.lumen/`.
 
 ---
 
@@ -183,11 +216,6 @@ Inspired by:
 Lumen's output isn't articles. It's **structured self-awareness of your own intellectual growth.** Articles, threads, and posts are just one serialization format.
 
 ---
-
-## Requirements
-
-- [Claude Code](https://claude.ai/code) with an active subscription (Pro or Max)
-- macOS / Linux (Windows via WSL)
 
 ## License
 
