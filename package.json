@@ -1,0 +1,11 @@
+{
+  "name": "lumen",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Claude Code skills for thinking & writing — capture, index, and materialize your judgment",
+  "scripts": {
+    "setup": "bin/setup",
+    "gen:skill-docs": "node scripts/gen-skill-docs.mjs"
+  }
+}

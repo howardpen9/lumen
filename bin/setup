@@ -1,0 +1,41 @@
+#!/bin/bash
+# Lumen Skills — Setup Script
+# Installs Lumen skills into Claude Code's skill directory
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+SKILL_DIR="$HOME/.claude/skills/lumen"
+DATA_DIR="$HOME/.lumen"
+
+echo ""
+echo "  ✦ Lumen — Setting up skills"
+echo ""
+
+# Create skill symlink
+if [ -L "$SKILL_DIR" ]; then
+  rm "$SKILL_DIR"
+fi
+ln -sf "$SCRIPT_DIR" "$SKILL_DIR"
+echo "  ✓ Skills linked: $SKILL_DIR → $SCRIPT_DIR"
+
+# Create data directories
+mkdir -p "$DATA_DIR/pool"
+mkdir -p "$DATA_DIR/explorations"
+mkdir -p "$DATA_DIR/drafts"
+mkdir -p "$DATA_DIR/exports"
+mkdir -p "$DATA_DIR/memory"
+mkdir -p "$DATA_DIR/youtube"
+mkdir -p "$DATA_DIR/reviews"
+echo "  ✓ Data directory: $DATA_DIR"
+
+# Verify
+SKILLS=$(ls -d "$SCRIPT_DIR"/lumen-*/SKILL.md 2>/dev/null | wc -l | tr -d ' ')
+echo "  ✓ $SKILLS skills installed"
+
+echo ""
+echo "  Ready! Try these in Claude Code:"
+echo "    /lumen-capture \"your first thought\""
+echo "    /lumen-index"
+echo "    /lumen-think"
+echo ""
